@@ -13,8 +13,23 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <input type="text" style="display: block; margin: auto; margin-top: 30px; width: 50%;" #inputext>
+  <button style="padding: 10px; border-radius: 11px; display: block; margin: auto; margin-top: 10px; width: 30%;" (click)="add(inputext.value)">ADD</button>
+
+
+  <ion-card *ngFor="let a of array" style="display: block; margin: auto; margin-top: 40px; width: 500px; cursor: pointer;" (click)="createalert(a)">
+    <ion-card-content >
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <p>{{a.text}}</p>
+        <ion-button fill="clear" (click)="deleteone(a.id,$event)">    
+          <ion-icon name="trash-outline" style="color: red!important;"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-card-content>
+    
+    
+  </ion-card>
+
+
+  
 </ion-content>
